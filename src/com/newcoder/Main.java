@@ -1,5 +1,7 @@
 package com.newcoder;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main {
@@ -153,7 +155,35 @@ public class Main {
     public static void demoOO(){
         Animal a = new Animal("Jim",3);
         a.say();
+        Animal h = new Human("Jim",10,"China");
+        h.say();
     }
+
+    public static void demoFunction(){
+        Random random = new Random();//随机数
+        random.setSeed(1); //随机数种子
+        print(1,random.nextInt(1000));
+        print(2,random.nextDouble());
+
+        List<Integer> array = Arrays.asList(new Integer[]{1,2,3,4,5});
+        Collections.shuffle(array);
+        print(3,array);//随机打乱
+
+        Date date = new Date();
+        print(4,date);
+        print(5,date.getTime());
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss "); //日期格式标准化
+        print(6,df.format(date));
+
+        print(7,UUID.randomUUID());//输出随机字符串
+        print(8,Math.log(10));
+        print(9,Math.max(10,123));
+        print(10,Math.min(1,10));
+        print(11,Math.ceil(2.2));
+        print(12,Math.floor(11.7));
+    }
+
     public static void main(String[] args) {
 //        print(1,"hello world");
 //        demoString();
@@ -162,7 +192,8 @@ public class Main {
 //        demoMapTable();
 //        demoSet();
 //        demoException();
-        demoOO();
+//        demoOO();
+        demoFunction();
 
     }
 }

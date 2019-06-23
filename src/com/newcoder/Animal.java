@@ -11,6 +11,6 @@ public class Animal implements Talking {
 
     @Override
     public void say() {
-        System.out.print(name + " Animal Say");
+        System.out.println(name + " Animal Say");
     }
 }
